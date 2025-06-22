@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TimeBank</title>
+</head>
+<body>
+    <h1>TimeBank — Услуги за время</h1>
+
+    <h2>Зарегистрироваться</h2>
+    <form action="/register" method="post">
+        <input name="username" placeholder="Имя пользователя">
+        <button type="submit">OK</button>
+    </form>
+
+    <h2>Добавить услугу</h2>
+    <form action="/add_service" method="post">
+        <input name="username" placeholder="Кто предлагает">
+        <input name="description" placeholder="Описание">
+        <input name="price" placeholder="Цена в часах">
+        <button type="submit">Добавить</button>
+    </form>
+
+    <h2>Все услуги</h2>
+    <ul>
+        {% for s in services %}
+        <li>{{ s.user }}: {{ s.description }} — {{ s.price }}ч</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
